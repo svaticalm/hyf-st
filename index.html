@@ -2,479 +2,153 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <title>Hyfactions — Технические работы</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ведутся технические работы</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
         }
 
         body {
-            font-family: 'Montserrat', sans-serif;
-            background: linear-gradient(135deg, #0c0c1d 0%, #1a1a2e 50%, #16213e 100%);
-            color: #fff;
             min-height: 100vh;
+            background: radial-gradient(1200px at top, #2b2f4a, #0b0d17);
+            color: #ffffff;
             display: flex;
-            justify-content: center;
             align-items: center;
-            overflow-x: hidden;
-            padding: 20px;
-            position: relative;
-        }
-
-        body::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(circle at 20% 30%, rgba(56, 103, 214, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 70%, rgba(220, 20, 60, 0.1) 0%, transparent 50%);
-            z-index: 1;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
         }
 
         .container {
-            position: relative;
-            z-index: 2;
-            max-width: 900px;
-            text-align: center;
+            max-width: 720px;
             padding: 40px;
-            background: rgba(15, 15, 35, 0.7);
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            animation: fadeIn 1s ease-out;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 24px;
+            box-shadow: 0 0 60px rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(12px);
+            animation: fadeIn 1.2s ease;
         }
 
         .logo {
-            margin-bottom: 30px;
-        }
-
-        .logo-icon {
-            font-size: 4rem;
-            color: #5865F2;
-            margin-bottom: 15px;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-
-        h1 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 3.2rem;
-            font-weight: 900;
-            margin-bottom: 20px;
-            background: linear-gradient(to right, #00d4ff, #0088ff, #5865F2);
+            font-size: 46px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #7aa2ff, #b28dff);
             -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            text-shadow: 0 5px 15px rgba(0, 132, 255, 0.3);
-            letter-spacing: 1px;
+            -webkit-text-fill-color: transparent;
         }
 
         .subtitle {
-            font-size: 1.4rem;
-            margin-bottom: 40px;
-            color: #b0b0d0;
-            line-height: 1.6;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+            font-size: 18px;
+            opacity: 0.8;
+            margin-bottom: 30px;
         }
 
-        .highlight {
-            color: #00d4ff;
+        .status {
+            font-size: 28px;
             font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .description {
+            font-size: 18px;
+            opacity: 0.75;
+            margin-bottom: 40px;
         }
 
         .buttons {
             display: flex;
+            gap: 20px;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 25px;
-            margin-top: 50px;
         }
 
         .btn {
             display: flex;
             align-items: center;
-            justify-content: center;
-            padding: 18px 35px;
-            font-size: 1.2rem;
+            gap: 12px;
+            padding: 16px 28px;
+            border-radius: 16px;
+            font-size: 18px;
             font-weight: 600;
             text-decoration: none;
-            border-radius: 12px;
-            transition: all 0.3s ease;
-            min-width: 220px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-            position: relative;
-            overflow: hidden;
-            border: none;
-            cursor: pointer;
+            color: #fff;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
         }
 
         .btn i {
-            margin-right: 12px;
-            font-size: 1.5rem;
+            font-size: 22px;
         }
 
         .btn-discord {
-            background: linear-gradient(135deg, #5865F2 0%, #4752c4 100%);
-            color: white;
+            background: linear-gradient(135deg, #5865F2, #4752C4);
+            box-shadow: 0 10px 30px rgba(88, 101, 242, 0.4);
         }
 
         .btn-boosty {
-            background: linear-gradient(135deg, #FF7A00 0%, #FF5500 100%);
-            color: white;
+            background: linear-gradient(135deg, #f15f2c, #ff8a3d);
+            box-shadow: 0 10px 30px rgba(241, 95, 44, 0.4);
         }
 
         .btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4);
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
         }
 
-        .btn:active {
-            transform: translateY(-2px);
-        }
-
-        .btn-discord:hover {
-            background: linear-gradient(135deg, #4752c4 0%, #3a45a8 100%);
-        }
-
-        .btn-boosty:hover {
-            background: linear-gradient(135deg, #FF5500 0%, #E64A00 100%);
-        }
-
-        .btn::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.7s;
-        }
-
-        .btn:hover::after {
-            left: 100%;
-        }
-
-        .countdown {
-            margin-top: 50px;
-            padding: 25px;
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .countdown-title {
-            font-size: 1.3rem;
-            margin-bottom: 20px;
-            color: #b0b0d0;
-        }
-
-        .timer {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .time-unit {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .time-value {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #00d4ff;
-            background: rgba(0, 0, 0, 0.5);
-            padding: 15px;
-            border-radius: 10px;
-            min-width: 100px;
-            box-shadow: 0 5px 15px rgba(0, 212, 255, 0.2);
-        }
-
-        .time-label {
-            margin-top: 10px;
-            font-size: 0.9rem;
-            color: #8a8ab5;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .progress-container {
-            width: 100%;
-            height: 8px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 4px;
+        .footer {
             margin-top: 30px;
-            overflow: hidden;
+            font-size: 14px;
+            opacity: 0.4;
         }
 
-        .progress-bar {
-            height: 100%;
-            width: 75%;
-            background: linear-gradient(to right, #00d4ff, #0088ff);
-            border-radius: 4px;
-            animation: progressAnimation 3s ease-in-out infinite alternate;
-        }
-
-        @keyframes progressAnimation {
-            0% { width: 70%; }
-            100% { width: 80%; }
-        }
-
-        .social-icons {
-            margin-top: 40px;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .social-icon {
-            color: #b0b0d0;
-            font-size: 1.5rem;
-            transition: all 0.3s ease;
-        }
-
-        .social-icon:hover {
-            color: #00d4ff;
-            transform: translateY(-3px);
-        }
-
-        .tech-icons {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 40px;
-            flex-wrap: wrap;
-        }
-
-        .tech-icon {
-            font-size: 2.5rem;
-            color: rgba(255, 255, 255, 0.1);
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .tech-icon:nth-child(1) { animation-delay: 0s; color: #00d4ff; }
-        .tech-icon:nth-child(2) { animation-delay: 1s; color: #5865F2; }
-        .tech-icon:nth-child(3) { animation-delay: 2s; color: #FF5500; }
-        .tech-icon:nth-child(4) { animation-delay: 3s; color: #00d4ff; }
-        .tech-icon:nth-child(5) { animation-delay: 4s; color: #5865F2; }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
-        }
-
-        footer {
-            margin-top: 50px;
-            color: #8a8ab5;
-            font-size: 0.9rem;
-        }
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.5rem;
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
             }
-            
-            .subtitle {
-                font-size: 1.2rem;
-            }
-            
-            .buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .btn {
-                width: 100%;
-                max-width: 300px;
-            }
-            
-            .timer {
-                flex-wrap: wrap;
-            }
-            
-            .time-value {
-                font-size: 2rem;
-                min-width: 80px;
-            }
-            
-            .container {
-                padding: 30px 20px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 2rem;
-            }
-            
-            .subtitle {
-                font-size: 1rem;
-            }
-            
-            .time-value {
-                font-size: 1.5rem;
-                min-width: 70px;
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="logo">
-            <div class="logo-icon">
-                <i class="fas fa-cogs"></i>
-            </div>
-        </div>
-        
-        <h1>ВЕДУТСЯ ТЕХНИЧЕСКИЕ РАБОТЫ</h1>
-        
-        <p class="subtitle">
-            Мы работаем над созданием <span class="highlight">уникального игрового опыта</span> для вас. 
-            Сервер откроется совсем скоро
-        </p>
-        
-        <div class="progress-container">
-            <div class="progress-bar"></div>
-        </div>
-        
-        <div class="countdown">
-            <div class="countdown-title">До запуска осталось:</div>
-            <div class="timer">
-                <div class="time-unit">
-                    <div class="time-value" id="days">05</div>
-                    <div class="time-label">Дней</div>
-                </div>
-                <div class="time-unit">
-                    <div class="time-value" id="hours">12</div>
-                    <div class="time-label">Часов</div>
-                </div>
-                <div class="time-unit">
-                    <div class="time-value" id="minutes">45</div>
-                    <div class="time-label">Минут</div>
-                </div>
-                <div class="time-unit">
-                    <div class="time-value" id="seconds">30</div>
-                    <div class="time-label">Секунд</div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="tech-icons">
-            <i class="fas fa-server tech-icon"></i>
-            <i class="fas fa-database tech-icon"></i>
-            <i class="fas fa-code tech-icon"></i>
-            <i class="fas fa-network-wired tech-icon"></i>
-            <i class="fas fa-bolt tech-icon"></i>
-        </div>
-        
-        <div class="buttons">
-            <a href="https://discord.gg/zaexZwaevU" target="_blank" class="btn btn-discord">
-                <i class="fab fa-discord"></i> Наш Discord
-            </a>
-            
-            <a href="https://boosty.to/hytale" target="_blank" class="btn btn-boosty">
-                <i class="fas fa-rocket"></i> Поддержать на Boosty
-            </a>
-        </div>
-        
-        <div class="social-icons">
-            <a href="#" class="social-icon"><i class="fab fa-vk"></i></a>
-            <a href="#" class="social-icon"><i class="fab fa-telegram"></i></a>
-            <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
-            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-        </div>
-        
-        <footer>
-            © 2023 Наш проект. Все права защищены.
-        </footer>
+
+<div class="container">
+    <div class="logo">HYFACTIONS</div>
+    <div class="subtitle">Фракционный сервер Hytale</div>
+
+    <div class="status">Ведутся технические работы!</div>
+    <div class="description">Совсем скоро запустимся 🚀</div>
+
+    <div class="buttons">
+        <a class="btn btn-discord" href="https://discord.gg/zaexZwaevU" target="_blank">
+            <i class="fa-brands fa-discord"></i>
+            Discord
+        </a>
+        <a class="btn btn-boosty" href="https://boosty.to/hytale" target="_blank">
+            <i class="fa-solid fa-heart"></i>
+            Boosty
+        </a>
     </div>
 
-    <script>
-        // Таймер обратного отсчета
-        function updateCountdown() {
-            const launchDate = new Date();
-            launchDate.setDate(launchDate.getDate() + 5); // Установим запуск через 5 дней
-            
-            const now = new Date().getTime();
-            const timeLeft = launchDate - now;
-            
-            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-            
-            document.getElementById('days').textContent = days.toString().padStart(2, '0');
-            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
-            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
-            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
-            
-            if (timeLeft < 0) {
-                clearInterval(countdownInterval);
-                document.querySelector('.countdown-title').textContent = "Сервер запущен!";
-                document.getElementById('days').textContent = "00";
-                document.getElementById('hours').textContent = "00";
-                document.getElementById('minutes').textContent = "00";
-                document.getElementById('seconds').textContent = "00";
-            }
-        }
-        
-        // Запускаем таймер
-        const countdownInterval = setInterval(updateCountdown, 1000);
-        updateCountdown(); // Вызываем сразу
-        
-        // Анимация для кнопок при наведении
-        document.querySelectorAll('.btn').forEach(btn => {
-            btn.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-5px)';
-            });
-            
-            btn.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0)';
-            });
-        });
-        
-        // Эффект падающих "частиц" на фоне
-        document.addEventListener('DOMContentLoaded', function() {
-            const container = document.querySelector('.container');
-            
-            for(let i = 0; i < 15; i++) {
-                const particle = document.createElement('div');
-                particle.style.position = 'absolute';
-                particle.style.width = Math.random() * 3 + 1 + 'px';
-                particle.style.height = particle.style.width;
-                particle.style.background = Math.random() > 0.5 ? 'rgba(0, 212, 255, 0.5)' : 'rgba(88, 101, 242, 0.5)';
-                particle.style.borderRadius = '50%';
-                particle.style.left = Math.random() * 100 + '%';
-                particle.style.top = Math.random() * 100 + '%';
-                particle.style.zIndex = '1';
-                particle.style.animation = `float ${Math.random() * 10 + 10}s linear infinite`;
-                
-                document.body.appendChild(particle);
-            }
-        });
-    </script>
+    <div class="footer">
+        © Hyfactions • Hytale Community
+    </div>
+</div>
+
 </body>
 </html>
