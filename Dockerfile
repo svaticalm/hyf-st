@@ -8,4 +8,4 @@ COPY . /usr/share/nginx/html
 # COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 # Порт, который будет слушать контейнер
-EXPOSE 80
+EXPOSE 3010
